@@ -193,7 +193,7 @@ class BTGRule(nn.Module):
 class Segre:
     """
     Segre, short for (Seg)mentation and (Re)ordering module.
-    If right_heaving branching, we use the following rules:
+    If right_heavy branching, we use the following rules:
         S -> A, B
         A -> BA, BB
         B -> AA, AB
@@ -208,13 +208,13 @@ class Segre:
         B -> CC, B -> AC, B -> CA
         C -> w
 
-    In this implementation, we a more compact version,
+    In this implementation, we use a more compact version,
         A -> w, B -> w
 
     Using C as a pre-terminal, we will have one-to-one corresponding to each 
     possible reordering and segmentation. In our case, the one-to-one correspondence
     is still retained at tree topology level, but not at leaf node level. But this 
-    spuriousness can be easily resolved by marginalize certain trees.
+    spuriousness can be easily resolved by marginalizing certain trees.
     """
 
     def __init__(self, rule_score, lengths, max_span_len, device) -> None:
@@ -647,8 +647,6 @@ class Seg(Segre):
         Constructing a chart in a bottom-up manner. We also store the chart and beta
         so that next time you call with num_segments + 1, you can reuse the chart and beta.
         """
-        # fmt: off
-
         # ideally we would enforce the constraint for each instance, here we only use the max_sent_len
         max_sent_len = max(self.lengths)
         bs = len(self.lengths)
@@ -714,7 +712,6 @@ class Seg(Segre):
         self.beta_cache = beta
         self.pcfg_cache = pcfg
 
-        # fmt: on
         return pcfg
 
     def cond_sample(self, batch_idx, num_segments, num_samples, segre_sample):
