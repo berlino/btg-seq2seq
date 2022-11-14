@@ -5,8 +5,8 @@ output_dir="/data/cl/data/user/bailinw/log/neural_btg_nmt_chr_en_seg2seg_$exp_id
 
 CUDA_VISIBLE_DEVICES=2 python neural_btg/commands/train_nmt_seg2seg.py \
         --do_test \
-        --dev_filename data/chr-en/dev100.chr,data/chr-en/dev100.en \
-        --test_filename data/chr-en/test100.chr,data/chr-en/test100.en \
+        --dev_filename data/chr-en/dev.chr,data/chr-en/dev.en \
+        --test_filename data/chr-en/test.chr,data/chr-en/test.en \
         --output_dir $output_dir \
 	--use_btg_decode \
 	--use_argmax \
