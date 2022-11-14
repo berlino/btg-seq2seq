@@ -1,7 +1,7 @@
 #!/bin/bash
 
 exp_id=351
-output_dir="/data/cl/data/user/bailinw/log/neural_btg_nmt_chr_en_seg2seg_$exp_id"
+output_dir="log/neural_btg_nmt_chr_en_seg2seg_$exp_id"
 
 CUDA_VISIBLE_DEVICES=0 python neural_btg/commands/train_nmt_seg2seg.py \
         --do_train \
