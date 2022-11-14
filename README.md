@@ -56,7 +56,7 @@ Run inference with btg
 ./scripts/infer_nmt_btg.sh
 ```
 
-Practical notes on running MT:
+### Practical notes
 
 * Memory: If OOM error pops up, consider decrease `batch_size` (e.g., to 100), `max_source/target_length` (e.g., 36 or 16) or `num_segments` (e.g., 2). 
 * Training time: Consider increase `warmup_steps` (e.g., to 6k) to speedup the training, and decrease `train_steps` During warmup, the underlying seq2seq is pretrained (i.e., num\_segments is set to 1)
