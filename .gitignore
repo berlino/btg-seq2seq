@@ -1,0 +1,8 @@
+*.egg-info/
+dist/
+log/
+wandb/
+*.pyc
+__pycache__/
+.vscode/
+
