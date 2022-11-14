@@ -58,8 +58,8 @@ Run inference with btg
 
 ### Practical notes
 
-* Memory: If OOM error pops up, consider decrease `batch_size` (e.g., to 100), `max_source/target_length` (e.g., 36 or 16) or `num_segments` (e.g., 2). 
-* Training time: Consider increase `warmup_steps` (e.g., to 6k) to speedup the training, and decrease `train_steps` During warmup, the underlying seq2seq is pretrained (i.e., `num_segments` is set to 1)
+* Memory: If OOM error pops up, consider decrease `batch_size` (e.g., to 100), `max_source/target_length` (e.g., 36 or 16), `num_segments` (e.g., 2) or increase `gradient_accumulation_steps`. 
+* Training time: Consider increase `warmup_steps` (e.g., to 6k) to speedup the training, and decrease `train_steps`. During warmup, the underlying seq2seq is pretrained (i.e., `num_segments` is set to 1).
 * Adapt to a new language pair: replace the corresponding train/dev/test filenames in the script; tune `vocab_size` (the size of BPE tokens) and `train_steps` depending on your data size. 
 
 ## License
