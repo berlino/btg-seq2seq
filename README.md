@@ -3,9 +3,9 @@
 > BTG Seq2Seq is a neural transducer that maintains the flexibility of standard sequence-to-sequence (seq2seq) models while incorporating hierarchical phrases as a source of inductive bias during training and as explicit constraints during inference. 
 
 ![](misc/btg.gif)
+
 [Hierarchical Phrase-based Sequence-to-Sequence Learning](https://arxiv.org/abs/2211.07906)
 EMNLP 2022
-
 
 
 ## Setup
